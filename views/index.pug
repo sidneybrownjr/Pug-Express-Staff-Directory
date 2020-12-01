@@ -1,0 +1,26 @@
+extends layout.pug
+include mixins/_tableRow
+include mixins/_addWorker
+
+block add-worker
+    +addWorker
+
+block content
+    table.ui.celled.table.center.aligned
+        thead 
+            tr
+                th Avatar
+                th First Name
+                th Last Name
+                th Email
+                th Phone
+                th City
+        tbody
+            for employee in employees
+                +tableRow(employee)
+        tfoot
+            tr
+                th(colspan='6')
+    footer
+        p © #{new Date().getFullYear()} My Company
+                    

@@ -1,0 +1,13 @@
+mixin addWorker
+    form(action="/add" method="POST" id="addWorker")
+        label(for="fname") First Name:
+        input(type="text" name="fname")
+        label(for="fname") Last Name:
+        input(type="text" name="lname")
+        label(for="fname") Email:
+        input(type="email" name="email")
+        label(for="fname") Phone:
+        input(type="text" name="phone")
+        label(for="fname") City:
+        input(type="text" name="city")
+        input(type="submit", value="Submit")
