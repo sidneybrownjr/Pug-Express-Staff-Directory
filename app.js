@@ -7,12 +7,15 @@ const fs = require('fs');
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Read file C[R]UD
 app.get('/', async (req, res) => {
+  //json-server --watch db.json -p=3001
   const query = await axios.get('http://localhost:3001/results');
   res.render('index', { employees: query.data });
 });
 
-app.post('/add', (req, res) => {
+// Create employee [C]RUD
+app.post('/', (req, res) => {
   // create new object to store POST data in
   let employee = {
     name: {
@@ -57,7 +60,13 @@ app.post('/add', (req, res) => {
       }
     );
   });
+
+  res.redirect('/');
 });
+
+// Update employee info CR[U]D
+
+// Delete employee CRU[D]
 
 app.listen(3000, () => {
   console.log('Listening on port 3000...');

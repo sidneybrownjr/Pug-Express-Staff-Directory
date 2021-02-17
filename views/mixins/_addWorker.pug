@@ -1,5 +1,5 @@
 mixin addWorker
-    form(action="/add" method="POST" id="addWorker")
+    form(action="/" method="POST" id="addWorker" )
         label(for="fname") First Name:
         input(type="text" name="fname")
         label(for="fname") Last Name:
@@ -10,4 +10,8 @@ mixin addWorker
         input(type="text" name="phone")
         label(for="fname") City:
         input(type="text" name="city")
-        input(type="submit", value="Submit")
+        input(type="submit" value="Submit" onclick='clickme()')
+        script.
+            function clickme() {
+                window.location.reload();
+            }
